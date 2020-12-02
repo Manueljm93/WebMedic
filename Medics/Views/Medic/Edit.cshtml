@@ -1,0 +1,39 @@
+﻿@model Medics.Models.ViewModels.MedicViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1>Edit Medics</h1>
+    </div>
+    <form method="post" style="padding-left:40%">
+        @Html.HiddenFor(d => d.IdMedic)
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+            
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            @Html.TextBoxFor(d => d.Apellido, "", new { @class="form-control" })
+
+        </div>
+
+        <div class="form-group">
+            <label for="Specialties">Specialty:</label>
+            @Html.TextBoxFor(d => d.Especialidad, "", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="Enrollment">Enrollment:</label>
+            @Html.TextBoxFor(d => d.Matricula, "", new { @class = "form-control" })
+
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+    </form>
+</div>

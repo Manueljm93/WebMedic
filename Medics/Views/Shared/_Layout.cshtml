@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Medics Site</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Home">
+                    <img alt="Brand" src="https://cdn.pixabay.com/photo/2017/05/15/21/58/drug-icon-2316244_960_720.png" style="width:25px">
+                </a>
+            </div>
+            <ul class="nav navbar-nav text-center" style="font-weight:bold; font-size:17px;">
+
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>LAMB</strong> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Medic">Medics</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>                        
+                    </ul>
+                </li>
+            </ul>
+            <strong>
+                @*@Html.Partial("_LoginPartial")*@
+            </strong>
+        </div>
+    </nav>
+
+
+
+    @RenderBody()
+    @*<footer class="footer navbar-fixed-bottom">*@
+
+    <footer>
+        <div class="container text-center">
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="/Home/About">About us</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Product for Mac</a></li>
+                            <li><a href="#">Product for Windows</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Web analytics</a></li>
+                            <li><a href="#">Presentations</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Product Help</a></li>
+                            <li><a href="#">Developer API</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a href="/Home"> © 2020 Medics.</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

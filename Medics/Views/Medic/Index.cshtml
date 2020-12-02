@@ -1,0 +1,49 @@
+﻿@model List<Medics.Models.ViewModels.MedicViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+<div class="container">
+    <div class="text-center">
+        <h1>Medics</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" style="text-align:right; padding:10px; padding-right:25px;">
+                <a style="text-decoration:none;" href="/Medic/Add"> <img href="/Medic/Add" src="~/Images/Medic/MedicADD_5.png" style="width:30px; height: 30px;" /></a>
+            </div>
+            <table class="table table-bordered text-center" style="font-size:18px; font-family: 'Roboto', sans-serif;">
+                <tr style="font:400">
+                    <th style="text-align: center; vertical-align: middle;"><b>#</b></th>
+                    <th style="text-align: center; vertical-align: middle;"><b>Name</b></th>
+                    <th style="text-align: center; vertical-align: middle;">Last Name</th>
+                    <th style="text-align: center; vertical-align: middle;">Specialties</th>
+                    <th style="text-align: center; vertical-align: middle;">Enrollment</th>
+                    <th style="text-align: center; vertical-align: middle;">Tools</th>
+                </tr>
+
+                @foreach (var oElemento in Model)
+                {
+                    <tr>
+                        <th style="text-align: center; vertical-align: middle; ">@oElemento.IdMedic</th>
+                        <th style="text-align: center; vertical-align: middle; ">@oElemento.Nombre</th>
+                        <th style="text-align: center; vertical-align: middle; ">@oElemento.Apellido</th>
+                        <th style="text-align: center; vertical-align: middle; ">@oElemento.Especialidad</th>
+                        <th style="text-align: center; vertical-align: middle; ">@oElemento.Matricula</th>
+                        <th style="text-align: center; vertical-align: middle; ">
+                            <div>
+                                <a style="text-decoration:none;" href="~/Medic/Edit/@oElemento.IdMedic"><img src="~/Images/Medic/MedicEDIT_2.png" style="width: 25px; height: 25px;"></a>
+                                <a class="btn" style="text-decoration:none" href="~/Medic/Erase/@oElemento.IdMedic"><img src="~/Images/Medic/MedicERASE_1.png" style="width: 47px; height: 47px; "></a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
